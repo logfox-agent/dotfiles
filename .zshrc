@@ -12,13 +12,7 @@ alias ll='ls -lah'
 # === shell functions (short helpers; `listenport` stays in bin/) ===
 
 git-cleanup() {
-  local branch="${1:-main}"
-  git checkout "$branch" && git pull -p
-  local gone
-  gone=$(git branch -vv | grep ': gone]' | awk '{print $1}' | grep -vE '^(main|dev|master)$')
-  if [ -n "$gone" ]; then
-    echo "$gone" | xargs git branch -D
-  fi
+  command "$HOME/dotfiles/bin/git-cleanup" "$@"
 }
 
 whatismyip() {
