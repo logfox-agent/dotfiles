@@ -9,11 +9,7 @@ export PATH="$HOME/.local/bin:$PATH" # cursor agent
 
 alias ll='ls -lah'
 
-# === shell functions (short helpers; `listenport` stays in bin/) ===
-
-git-cleanup() {
-  command "$HOME/dotfiles/bin/git-cleanup" "$@"
-}
+# === shell functions (short helpers; bin/ scripts via ~/.local/bin — see install.sh) ===
 
 whatismyip() {
   local pub local_ip
